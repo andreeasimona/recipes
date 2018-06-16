@@ -1,6 +1,6 @@
 # Recipe searcher
 
-A react client web app for the [[http://www.recipepuppy.com/][Recipe Puppy API]].
+A react client web app for the [Recipe Puppy API](http://www.recipepuppy.com/).
 
 Queries the API for the given search term, displaying the first 20 results found
 
@@ -15,7 +15,7 @@ Queries the API for the given search term, displaying the first 20 results found
 ![image2](https://user-images.githubusercontent.com/6817073/41499327-7cbad6f4-717e-11e8-9e84-b67f8607a60b.PNG)
 
 ## Libraries
-   - [React](https://github.com/facebook/create-react-app) used to create the web client with no build configuration 
-   - [lodash.throttle](https://github.com/lodash/lodash/tree/4.1.1-npm-packages/lodash.throttle) to throttle the user´s 
+   - [Create React App](https://github.com/facebook/create-react-app) used to create the web client with no build configuration 
+   - [lodash.throttle](https://github.com/lodash/lodash/tree/4.1.1-npm-packages/lodash.throttle) to throttle the user´s speed typing and improve the overall performance
    - [jsonp](https://github.com/teamcapybara/capybara) to call the Recipe Puppy API and bypass the API's CORS protocol
    - [async](https://github.com/caolan/async) to facilitate asynchronous JavaScript

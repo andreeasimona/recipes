@@ -3,7 +3,7 @@ const async = require('async');
 
 const maximumRecipes = 20;
 const receivedRecipesPerRequests = 10;
-const sendReuest = maximumRecipes / receivedRecipesPerRequests;
+const sendReuests = maximumRecipes / receivedRecipesPerRequests;
 const getRecepes = function (callback, foodName, index) {
     return jsonp(`http://www.recipepuppy.com/api/?q=${foodName}&p=${index}`, {
         name: `cb${index}`
@@ -14,7 +14,7 @@ const getRecepes = function (callback, foodName, index) {
 
 const requests = function (foodName) {
     let stackRequests = [];
-    for (var index = 1; index <= sendReuest; index++) {
+    for (let index = 1; index <= sendReuests; index++) {
         (function (index) {
             stackRequests.push(function (callback) {
                 getRecepes(callback, foodName, index)
@@ -29,7 +29,11 @@ const promise = function (foodName, cbSuccess, cbError) {
         if (error) {
             cbError();
         } else {
-            cbSuccess([].concat.apply([], results));
+            if (results !== null && results !== undefined) {
+                cbSuccess([].concat.apply([], results));
+            } else {
+                cbError();
+            }
         }
     });
 }
