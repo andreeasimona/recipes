@@ -12,7 +12,7 @@ Queries the API for the given search term, displaying the first 20 results found
 ![recipes](https://user-images.githubusercontent.com/6817073/41499401-15725326-7180-11e8-8f6b-6dfbf9dbcb24.gif)
 
 ## Project structure
-![image2](https://user-images.githubusercontent.com/6817073/41499327-7cbad6f4-717e-11e8-9e84-b67f8607a60b.PNG)
+![structure](https://user-images.githubusercontent.com/6817073/41499615-1676c90c-7183-11e8-9bed-58417424fdbe.PNG)
 
 ## Libraries
    - [Create React App](https://github.com/facebook/create-react-app) used to create the web client with no build configuration 
