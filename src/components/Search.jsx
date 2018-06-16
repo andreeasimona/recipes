@@ -32,7 +32,7 @@ class Search extends Component {
                     type="text"
                     placeholder="Enter food title"
                     onChange={e => {
-						e.persist();
+                        e.persist();
                         this.handleChange(e);
                     }}
                 />
