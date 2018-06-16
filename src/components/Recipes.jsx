@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import { Table } from "react-bootstrap";
-class Recipes extends Component {
+class Recipes extends React.PureComponent {
     constructor(props) {
         super(props);
     }
