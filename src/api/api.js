@@ -13,26 +13,25 @@ const getRecepes = function (callback, foodName, index) {
 };
 
 const requests = function (foodName) {
-    let stackRequests = [];
-    for (let index = 1; index <= sendReuests; index++) {
-        (function (index) {
-            stackRequests.push(function (callback) {
-                getRecepes(callback, foodName, index)
-            });
-        })(index);
-    }
+    let stackRequests = Array.apply(null, Array(2));
+
+    stackRequests.forEach(function (el, index) {
+        stackRequests[index] = function (callback) {
+            getRecepes(callback, foodName, index + 1)
+        };
+    });
     return stackRequests;
 }
 
-const promise = function (foodName, cbSuccess, cbError) {
+const promise = function (foodName, callback) {
     async.parallel(requests(foodName), function (error, results) {
         if (error) {
-            cbError();
+            callback();
         } else {
             if (results !== null && results !== undefined) {
-                cbSuccess([].concat.apply([], results));
+                callback([].concat.apply([], results));
             } else {
-                cbError();
+                callback();
             }
         }
     });
